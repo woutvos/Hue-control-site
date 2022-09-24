@@ -137,31 +137,71 @@ groups_example = [
     {
         "id": 1,
         "name": "Alles",
-        "lights": {"id": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"]},
+        "lights": {
+            "id": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"],
+        },
         "type": "LightGroup",
-        "state": {"all_on": False, "any_on": True},
+        "state": {
+            "all_on": False,
+            "any_on": True
+        },
     },
     {
         "id": 1,
         "name": "Slaapkamer",
-        "lights": {"id": [1, 2, 3, 4, 5], "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"]},
+        "lights": {
+            "id": [1, 2, 3, 4, 5],
+            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"],
+        },
         "type": "LightGroup",
-        "state": {"all_on": False, "any_on": True},
+        "state": {
+            "all_on": False,
+            "any_on": True
+        },
     },
     {
         "id": 3,
         "name": "Woonkamer",
-        "lights": {"id": [8, 9], "name": ["Bank", "Tv meubel"]},
+        "lights": {
+            "id": [8, 9],
+            "name": ["Bank", "Tv meubel"]
+        },
         "type": "LightGroup",
-        "state": {"all_on": True, "any_on": True},
+        "state": {
+            "all_on": True,
+            "any_on": True
+        },
     },
     {
         "id": 4,
         "name": "Keuken",
-        "lights": {"id": [6,7 ], "name": ["Keukentafel", "Aanrecht",]},
+        "lights": {
+            "id": [6, 7],
+            "name": [
+                "Keukentafel",
+                "Aanrecht",
+            ],
+        },
         "type": "LightGroup",
-        "state": {"all_on": True, "any_on": True},
+        "state": {
+            "all_on": True,
+            "any_on": True
+        },
     },
 ]
 
-bridges_example = {'id': '1', 'internalipaddress' : 'example'}, {'id': '2', 'internalipaddress' : 'example2'}, {'id': '1', 'internalipaddress' : '192.168.1.71'},
+bridges_example = (
+    {
+        "id": "1",
+        "internalipaddress": "example"
+    },
+    {
+        "id": "2",
+        "internalipaddress": "example2"
+    },
+    {
+        "id": "1",
+        "internalipaddress": "192.168.1.71"
+    },
+)
