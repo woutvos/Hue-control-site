@@ -1,5 +1,4 @@
 from phue import Bridge
-from dotenv import load_dotenv
 from rgbxy import Converter
 import requests
 import sqlite3
@@ -19,13 +18,9 @@ converter = Converter()
 DB_PATH = 'settings.db'
 logging.info(f'Using: {DB_PATH}')
 
-# Load environment variables
-load_dotenv()
-logging.info('Loaded dotenv')
 
-
-# connect to the latest used bridge
 def connect_to_latest_bridge():
+    """Connect to the latest used bridge"""
     # Connect to database
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
@@ -54,8 +49,8 @@ def connect_to_latest_bridge():
     return b
 
 
-# Get current bridge ip
 def get_current_bridge_ip():
+    """Get the ip from the bridge that is currently connected"""
     # Connect to database
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
@@ -71,8 +66,8 @@ def get_current_bridge_ip():
     return bridge_ip
 
 
-# Update bridge ip in database
 def update_bridge_ip(bridge_ip):
+    """Update the bridge ip to the database"""
     # Connect to database
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
@@ -89,8 +84,8 @@ def update_bridge_ip(bridge_ip):
     logging.info(f'Bridge ip updated to: {bridge_ip}')
 
 
-# Get bridges
 def get_bridges():
+    """Get all the bridges in the network."""
     #r = requests.get('https://discovery.meethue.com/')
     #bridges = r.json()
 
@@ -101,8 +96,8 @@ def get_bridges():
     return bridges
 
 
-# Function to get the lights and store them in a list
 def get_lights(b):
+    """Get all the lights"""	
     if b == 'example':
         logging.info('Using example data for lights')
         lights_list = examples.lights_example
@@ -137,26 +132,26 @@ def get_lights(b):
     return lights_list
 
 
-# Function to turn on the lights
 def light_on(b, light_id):
+    """Turn on the light"""	
     b.set_light(light_id, 'on', True)
     logging.info(f'Light {light_id} turned on')
 
 
-# Function to turn off the lights
 def light_off(b, light_id):
+    """Turn off the light"""
     b.set_light(light_id, 'on', False)
     logging.info(f'Light {light_id} turned off')
 
 
-# Funtion to change the brightness
 def set_light_brightness(b, light_id, brightness):
+    """Set the brightness of the light"""
     b.set_light(light_id, 'bri', brightness)
     logging.info(f'Light {light_id} brightness set to {brightness}')
 
 
-# Function to change the color
 def set_light_color(b, light_id, color):
+    """Set the color of the light"""
     # Convert the color to xy
     color = color.lstrip('#')
     xy = converter.hex_to_xy(color)
@@ -167,16 +162,16 @@ def set_light_color(b, light_id, color):
     logging.info(f'Light {light_id} color set to {color}')
 
 
-# Function to get the light name by id
 def get_light_names(light_id, lights):
+    """Get the id's of the lights and their corresponding names"""
     # Get the name of the light
     for l in lights:
         if l['id'] == light_id:
             return l['name']
 
 
-# Function to get the groups
 def get_groups(b):
+    """Get all the groups"""
     if b == 'example':
         logging.info('Using example data for groups')
         groups_example = examples.groups_example
