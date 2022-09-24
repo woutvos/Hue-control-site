@@ -90,12 +90,10 @@ def update_bridge_ip(bridge_ip):
 
 # Get bridges
 def get_bridges():
-    #r = requests.get('https://discovery.meethue.com/')
-    #bridges = r.json()
+    r = requests.get('https://discovery.meethue.com/')
+    bridges = r.json()
 
-    #bridges.append({'id': 'example', 'internalipaddress': 'example'})
-
-    bridges = [{'id': '1', 'internalipaddress' : '192.168.1.71'}, {'id': '2', 'internalipaddress' : 'example'}]
+    bridges.append({'id': 'example', 'internalipaddress': 'example'})
 
     logging.info(f'Found {len(bridges)} bridges: {bridges}')
     return bridges
