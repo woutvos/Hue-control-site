@@ -3,8 +3,15 @@ import hue
 import logging
 
 
-app = Flask(__name__)
+# Logging configuration
+logging.basicConfig(
+    level=logging.INFO,
+    filename='app.log', filemode='w',
+    format='%(asctime)s - %(levelname)s - %(name)s - %(message)s'
+)
 
+# Flask configuration
+app = Flask(__name__)
 
 # Connect to the latest used bridge
 b = hue.connect_to_latest_bridge()
