@@ -4,6 +4,7 @@ from rgbxy import Converter
 import requests
 import sqlite3
 import logging
+import examples
 
 # Logging configuration
 logging.basicConfig(
@@ -90,10 +91,11 @@ def update_bridge_ip(bridge_ip):
 
 # Get bridges
 def get_bridges():
-    r = requests.get('https://discovery.meethue.com/')
-    bridges = r.json()
+    #r = requests.get('https://discovery.meethue.com/')
+    #bridges = r.json()
 
-    bridges.append({'id': 'example', 'internalipaddress': 'example'})
+    #bridges.append({'id': 'example', 'internalipaddress': 'example'})
+    bridges = examples.bridges_example
 
     logging.info(f'Found {len(bridges)} bridges: {bridges}')
     return bridges
@@ -103,7 +105,7 @@ def get_bridges():
 def get_lights(b):
     if b == 'example':
         logging.info('Using example data for lights')
-        lights_list = [{'id': 1, 'name': 'Test', 'status': True, 'brightness': 144, 'colormode': 'xy', 'hue': 7675, 'saturation': 199, 'xy': [0.5016, 0.4151], 'colortemp': 443, 'effect': 'none', 'alert': 'select', 'reachable': True, 'type': 'Extended color light'}, {'id': 2, 'name': 'Kast', 'status': True, 'brightness': 144, 'colormode': 'xy', 'hue': 7675, 'saturation': 199, 'xy': [0.5016, 0.4151], 'colortemp': 443, 'effect': 'none', 'alert': 'select', 'reachable': True, 'type': 'Extended color light'}, {'id': 3, 'name': 'Bed achter', 'status': True, 'brightness': 144, 'colormode': 'xy', 'hue': 7675, 'saturation': 199, 'xy': [0.5016, 0.4151], 'colortemp': 443, 'effect': 'none', 'alert': 'select', 'reachable': True, 'type': 'Extended color light'}, {'id': 4, 'name': 'Setup', 'status': True, 'brightness': 144, 'colormode': 'xy', 'hue': 7675, 'saturation': 199, 'xy': [0.5016, 0.4151], 'colortemp': 443, 'effect': 'none', 'alert': 'select', 'reachable': True, 'type': 'Extended color light'}, {'id': 5, 'name': 'Vloer', 'status': True, 'brightness': 144, 'colormode': 'xy', 'hue': 7675, 'saturation': 199, 'xy': [0.5016, 0.4151], 'colortemp': 443, 'effect': 'none', 'alert': 'select', 'reachable': True, 'type': 'Extended color light'}, {'id': 7, 'name': 'Bed zijkant', 'status': True, 'brightness': 144, 'colormode': 'xy', 'hue': 13523, 'saturation': 200, 'xy': [0.5017, 0.4152], 'colortemp': 443, 'effect': 'none', 'alert': 'select', 'reachable': True, 'type': 'Extended color light'}]
+        lights_list = examples.lights_example
 
     else:
         # Get the lights
@@ -177,8 +179,7 @@ def get_light_names(light_id, lights):
 def get_groups(b):
     if b == 'example':
         logging.info('Using example data for groups')
-        groups_example = [{'id': 1, 'name': 'All', 'lights': {'id': [3, 4, 5, 7], 'name': ['Lamp1', 'Lamp2', 'Lamp3', 'Lamp4']}, 'type': 'LightGroup', 'state': {'all_on': True, 'any_on': True}}, {'id': 2, 'name': 'Groep 1', 'lights': {'id': [1, 2, 3, 4], 'name': ['Lamp1', 'Lamp2', 'Lamp3', 'Lamp4']}, 'type': 'LightGroup', 'state': {'all_on': True, 'any_on': True}}, {'id': 3, 'name': 'Groep 2', 'lights': {
-            'id': [1, 2], 'name': ['Lamp1', 'Lamp2']}, 'type': 'LightGroup', 'state': {'all_on': True, 'any_on': True}}, {'id': 4, 'name': 'Groep 3', 'lights': {'id': [1, 2], 'name': ['Lamp1', 'Lamp2']}, 'type': 'LightGroup', 'state': {'all_on': True, 'any_on': True}}, {'id': 5, 'name': 'Groep 4', 'lights': {'id': [1, 2], 'name': ['Lamp1', 'Lamp2']}, 'type': 'LightGroup', 'state': {'all_on': True, 'any_on': True}}]
+        groups_example = examples.groups_example
         return groups_example
 
     logging.info('Getting groups')
