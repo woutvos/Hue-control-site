@@ -66,6 +66,7 @@ def settings():
         "settings.html",
         title="Settings",
         bridges_list=hue.get_bridges(),
+        current_bridge_ip=hue.get_current_bridge_ip(),
         )
 
 
