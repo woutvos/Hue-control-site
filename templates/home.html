@@ -2,21 +2,21 @@
 {% block content %}
     <div class="container-sm">
         <h1>Home</h1>
-        <p>Hallo lezer! Momenteel werkt helaas nog niet alles, alles wat je ziet, op lege pagina's na, doet het!</p>
+        <p>Hallo lezer! Momenteel werkt helaas nog niet alles, alles wat je ziet, op lege pagina's na, doet het wel!</p>
         <p>Het kan zijn dat de pagina <a href="{{ url_for('control_page') }}">control page</a> langer moet laden, gemiddeld duurt dit 5 seconden. Later word async toegevoegd om deze lang wachttijd op te lossen.</p>
         
         <h2 class="mt-5">Vaak gestelde vragen</h2>
         <h5>Ik heb geen hue bridge maar wil de control page wel bekijk, is dat mogelijk?</h5>
-        <p>Jazeker! Ga naar de <a href="{{ url_for('settings') }}">instellingen</a> en selecteer bij "Change bridge" "example"</p>
+        <p>Jazeker! Ga naar de <a href="{{ url_for('settings') }}">instellingen</a> en selecteer bij "Change bridge" "example". Je kan nu de website bekijken zonder vervelende fouten te krijgen, je kan in deze modus helaas niks aanpassen.</p>
 
         <h5>De home pagina is in het Nederlands maar de rest in het Engels, hoe zit dat?</h5>
         <p>Momenteel word de site vooral in het engels gebouwd, behalve deze pagina. Later zullen we de mogelijkheid voor meerdere talen toevoegen.</p>
 
         <h5>Ik heb een idee voor de site, hoe kan ik dit doorgeven?</h5>
-        <p>Je kan een issue aanmaken op <a href="https://github.com/woutvos/Hue-control-site/issues/new">Github</a>.</p>
+        <p>U kan het beste een issue aanmaken op <a href="https://github.com/woutvos/Hue-control-site/issues/new">Github</a>.</p>
 
         <h5>Ik heb een probleem met de site, hoe kan ik dit doorgeven?</h5>
-        <p>Ook daarvoor kun je een issue aanmaken op <a href="https://github.com/woutvos/Hue-control-site/issues/new">Github</a>.</p>
+        <p>Ook daarvoor kunt u een issue aanmaken op <a href="https://github.com/woutvos/Hue-control-site/issues/new">Github</a>.</p>
 
         <h3 class="mt-5">To Do</h3>
         <div class="list-group">
@@ -38,6 +38,13 @@
             <li class="list-group-item">Disable card whe not reachable</li>
             <li class="list-group-item">Snelheid optimaliseren</li>
             <li class="list-group-item">Bridge info card</li>
+            <li class="list-group-item">Tabs in the top of the control page for groups</li>
+        </div>
+
+        <h3 class="mt-5">Momenteel mee bezig</h3>
+        <div class="list-group">
+            <li class="list-group-item">Groep pagina</li>
+            <li class="list-group-item">Groepen</li>
         </div>
 
             <!-- Disabled item's-->
@@ -51,6 +58,7 @@
             <li class="list-group-item list-group-item-action">Loggen</li>
             <li class="list-group-item list-group-item-action">Instellingen</li>
             <li class="list-group-item list-group-item-action">Automatisch zoeken naar bridge</li>
+            <li class="list-group-item list-group-item-action">Voorbeeld functionaliteit</li>
         </div>
     </div>
 {% endblock content %}
