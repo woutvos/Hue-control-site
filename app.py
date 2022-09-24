@@ -1,13 +1,15 @@
-from flask import Flask, render_template, request, redirect
-import hue
 import logging
 
+from flask import Flask, redirect, render_template, request
+
+import hue
 
 # Logging configuration
 logging.basicConfig(
     level=logging.INFO,
-    filename='app.log', filemode='w',
-    format='%(asctime)s - %(levelname)s - %(name)s - %(message)s'
+    filename="app.log",
+    filemode="w",
+    format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
 )
 
 # Flask configuration
@@ -67,7 +69,7 @@ def settings():
         title="Settings",
         bridges_list=hue.get_bridges(),
         current_bridge_ip=hue.get_current_bridge_ip(),
-        )
+    )
 
 
 # Route update the bridge ip
@@ -83,42 +85,42 @@ def update_bridge_ip(bridge_ip):
 @app.route("/light/<light_id>/on", methods=["POST"])
 def light_on(light_id):
     light_id = int(light_id)
-    if request.method == 'POST':
+    if request.method == "POST":
         hue.light_on(b, light_id)
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 # Route to turn off the lights
 @app.route("/light/<light_id>/off", methods=["POST"])
 def light_off(light_id):
     light_id = int(light_id)
-    if request.method == 'POST':
+    if request.method == "POST":
         hue.light_off(b, light_id)
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 # Route to change the brightness
 @app.route("/light/<light_id>/brightness", methods=["POST"])
 def light_brightness(light_id):
     light_id = int(light_id)
-    if request.method == 'POST':
-        brightness = request.form['brightness']
+    if request.method == "POST":
+        brightness = request.form["brightness"]
         brightness = int(brightness)
         hue.set_light_brightness(b, light_id, brightness)
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 # Route to change the color
 @app.route("/light/<light_id>/color", methods=["POST"])
 def light_color(light_id):
     light_id = int(light_id)
-    if request.method == 'POST':
-        hue.set_light_color(b, light_id, request.form['color'])
+    if request.method == "POST":
+        hue.set_light_color(b, light_id, request.form["color"])
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 if __name__ == "__main__":
