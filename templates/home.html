@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="container-sm">
+    <div class="container-md">
         <h1>Home</h1>
         <p>Hallo lezer! Momenteel werkt helaas nog niet alles, alles wat je ziet, op lege pagina's na, doet het wel!</p>
         <p>Het kan zijn dat de pagina <a href="{{ url_for('control_page') }}">control page</a> langer moet laden, gemiddeld duurt dit 5 seconden. Later word async toegevoegd om deze lang wachttijd op te lossen.</p>
@@ -55,6 +55,8 @@
             <li class="list-group-item">Meer kleur toevoegen</li>
             <li class="list-group-item">Schaduw toevoegen</li>
             <li class="list-group-item">Placeholder tijdens laden</li>
+            <li class="list-group-item">Navbar makeover</li>
+            <li class="list-group-item">Zoek functie</li>
         </div>
 
         <h3 class="mt-5">Momenteel mee bezig</h3>
@@ -74,6 +76,7 @@
             <li class="list-group-item list-group-item-action">Instellingen</li>
             <li class="list-group-item list-group-item-action">Automatisch zoeken naar bridge</li>
             <li class="list-group-item list-group-item-action">Voorbeeld functionaliteit</li>
+            <li class="list-group-item list-group-item-action">Responsiveness</li>
         </div>
     </div>
 {% endblock content %}
