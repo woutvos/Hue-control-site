@@ -20,26 +20,45 @@
 </head>
 </body>
 <!-- Navbar -->
-<nav
-    class="navbar d-flex flex-wrap py-3 mb-4 border-bottom align-items-center justify-content-center justify-content-md-between">
+<nav class="navbar navbar-expand-md bg-light border-bottom mb-4 sticky-top">
     <div class="container-fluid">
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="{{ url_for('home') }}" class="nav-link px-2 link-secondary">Home</a></li>
-            <li><a href="{{ url_for('features') }}" class="nav-link px-2 link-dark">Features</a></li>
-            <li><a href="{{ url_for('control_page') }}" class="nav-link px-2 link-dark">Control page</a></li>
-            <li><a href="{{ url_for('about') }}" class="nav-link px-2 link-dark">About</a></li>
-            <li><a href="{{ url_for('settings') }}" class="nav-link px-2 link-dark">Settings</a></li>
-        </ul>
-        <div class="text-end">
-            <a href="{{ url_for('login') }}">
-                <button type="button" class="btn btn-secondary me-2 shadow-sm">Login</button>
-            </a>
-            <a href="{{ url_for('register') }}">
-                <button type="button" class="btn btn-primary me-2 shadow-lg">Register</button>
-            </a>
+        <a class="navbar-brand" href="{{ url_for('home') }}">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('features') }}">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('control_page') }}">Control page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url_for('settings') }}">Settings</a>
+                </li>
+            </ul>
+            <div class="text-right-md">
+                <ul class="navbar-nav me-auto mb-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">
+                            <button type="button" class="btn btn-secondary me-2 shadow-sm">Login</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('register') }}">
+                            <button type="button" class="btn btn-primary me-2 shadow-lg">Register</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
+
 {% block content %}{% endblock %}
 <br>
 </body>
