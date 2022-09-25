@@ -35,10 +35,10 @@
             <li class="list-group-item">About pagina</li>
             <li class="list-group-item">Card gradient voor control page</li>
             <li class="list-group-item">Groepen</li>
-            <li class="list-group-item">Disable card whe not reachable</li>
+            <li class="list-group-item">Kaart uitschakelen wanneer niet bereikbaar</li>
             <li class="list-group-item">Snelheid optimaliseren</li>
             <li class="list-group-item">Bridge info card</li>
-            <li class="list-group-item">Tabs in the top of the control page for groups</li>
+            <li class="list-group-item">Tabbladen bovenaan de control page voor groepen</li>
             <li class="list-group-item">Niet te veel reqeusts sturen naar discovery.meethue.com</li>
             <li class="list-group-item">Effecten</li>
             <li class="list-group-item">Schedules</li>
@@ -49,12 +49,11 @@
             <li class="list-group-item">voeg deepsource-widget toe</li>
             <li class="list-group-item">Los de meeste deepsource-problemen op</li>
             <li class="list-group-item">Dark mode</li>
-            <li class="list-group-item">Meer contrast toevoegen</li>
-            <li class="list-group-item">Meer kleur toevoegen</li>
-            <li class="list-group-item">Schaduw toevoegen</li>
             <li class="list-group-item">Placeholder tijdens laden</li>
-            <li class="list-group-item">Navbar makeover</li>
             <li class="list-group-item">Zoek functie</li>
+            <li class="list-group-item">Rondleiding</li>
+            <li class="list-group-item">Hints</li>
+            <li class="list-group-item">Lampen en groepen beheren, toevoegen, verwijderen</li>
         </div>
 
         <h3 class="mt-5">Momenteel mee bezig</h3>
@@ -66,15 +65,15 @@
             <!-- Disabled item's-->
         <h3 class="mt-5">Al gedaan</h3>
         <div class="list-group shadow-lg">
-            <li class="list-group-item list-group-item-action">Home pagina</li>
-            <li class="list-group-item list-group-item-action">Aan/uit</li>
-            <li class="list-group-item list-group-item-action">Kleur</li>
-            <li class="list-group-item list-group-item-action">Dimmen</li>
-            <li class="list-group-item list-group-item-action">Loggen</li>
-            <li class="list-group-item list-group-item-action">Instellingen</li>
-            <li class="list-group-item list-group-item-action">Automatisch zoeken naar bridge</li>
-            <li class="list-group-item list-group-item-action">Voorbeeld functionaliteit</li>
-            <li class="list-group-item list-group-item-action">Responsiveness</li>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('home') }}">Home pagina</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Aan/uit</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Kleur</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Dimmen</a>
+            <li class="list-group-item">Loggen</li>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('settings') }}">Instellingen</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('settings') }}">Automatisch zoeken naar bridge</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('settings') }}">Voorbeeld functionaliteit</a>
+            <li class="list-group-item">Responsiveness</li>
         </div>
     </div>
 {% endblock content %}
