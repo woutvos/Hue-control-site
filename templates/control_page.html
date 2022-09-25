@@ -1,11 +1,11 @@
 {% extends "layout.html" %} {% block content %}
     <!-- Groups -->
     <div class="container-fluid">
-        <h1 class="text-center mb-4">All groups</h1>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-4">
+        <h1 class="text-center mb-3 mt-5">All groups</h1>
+        <div class="row justify-content-center">
             {% for group in groups_list %}
-                <div class="col">
-                    <div class="card">
+                <div class="col-auto mb-3">
+                    <div class="card text-center mx-3 my-4" style="width: 17rem;">
 
                         <div class="card-header">
                             <h5>{{ group.name }}</h5>
@@ -15,9 +15,12 @@
                             <!-- List of all the lights in that group -->
                             <ul class="list-group list-group-flush">
                                 {% for light_name in group.lights.name %}
-                                    <p class="list-group-item">{{light_name}}</p>
+                                    <p class="list-group-item mx-5 my-1">{{light_name}}</p>
                                 {% endfor %}
                             </ul>
+                        </div>
+
+                        <div class="card-footer mb-2" style="background: transparent; border-top: 0px;">
                             <a href="/group/{{ group.id }}" class="btn btn-primary">View</a>
                         </div>
 
@@ -28,12 +31,12 @@
     </div>
 
     <!-- Lights -->
-    <div class="container-fluid">
-        <h1 class="text-center mb-4">All lights</h1>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-4">
+    <div class="container-fluid mt-4">
+        <h1 class="text-center mb-3 mt-5">All lights</h1>
+        <div class="row justify-content-center">
             {% for light in lights_list %}
-                <div class="col">
-                    <div class="card">
+                <div class="col-auto mb-3">
+                    <div class="card text-center mx-3 my-4" style="width: 17rem;">
 
                         <div class="card-header">
                             <h5>{{ light.name }}</h5>
@@ -79,7 +82,7 @@
                             </form>
                         </div>
 
-                        <div class="card-footer card-text text-muted">
+                        <div class="card-footer text-muted">
                             <small>Id: {{ light.id }}</small>
                             <br />
                             <small>Reachable: {{ light.reachable }}</small>
