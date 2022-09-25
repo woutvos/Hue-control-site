@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             {% for group in groups_list %}
                 <div class="col-auto mb-3">
-                    <div class="card text-center mx-3 my-4" style="width: 17rem;">
+                    <div class="card text-center shadow mx-3 my-4" style="width: 17rem;">
 
                         <div class="card-header">
                             <h5>{{ group.name }}</h5>
@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="card-footer mb-2" style="background: transparent; border-top: 0px;">
-                            <a href="/group/{{ group.id }}" class="btn btn-primary">View</a>
+                            <a href="/group/{{ group.id }}" class="btn btn-primary shadow-lg">View</a>
                         </div>
 
                     </div>
@@ -36,23 +36,23 @@
         <div class="row justify-content-center">
             {% for light in lights_list %}
                 <div class="col-auto mb-3">
-                    <div class="card text-center mx-3 my-4" style="width: 17rem;">
+                    <div class="card text-center shadow mx-3 my-4" style="width: 17rem;">
 
-                        <div class="card-header">
+                        <div class="card-header shadow-sm">
                             <h5>{{ light.name }}</h5>
                         </div>
 
-                        <div class="card-body">
+                        <div class="card-body shadow-sm">
                             <!-- On/Off -->
                             {% if light.status == false %}
                                 <form action="/light/{{ light.id }}/on" method="post">
-                                    <button type="submit" value="Turn on" class="btn btn-secondary">
+                                    <button type="submit" value="Turn on" class="btn btn-secondary shadow">
                                         Turn on
                                     </button>
                                 </form>
                             {% elif light.status == true %}
                                 <form action="/light/{{ light.id }}/off" method="post">
-                                    <button type="submit" value="Turn off" class="btn btn-primary">
+                                    <button type="submit" value="Turn off" class="btn btn-primary shadow-sm">
                                         Turn off
                                     </button>
                                 </form>
