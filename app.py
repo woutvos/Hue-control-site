@@ -121,5 +121,15 @@ def light_color(light_id):
     return redirect('/control_page')
 
 
+# Route to turn group on and off
+@app.route("/group/<group_id>/<state>", methods=["POST"])
+def group_on_off(group_id, state):
+    group_id = int(group_id)
+    if request.method == 'POST':
+            hue.group_on_off(b, group_id, state)
+
+    return redirect('/control_page')
+
+
 if __name__ == "__main__":
     app.run(debug=True, host="127.0.0.1", port=80)

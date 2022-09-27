@@ -18,10 +18,25 @@
                                     <p class="list-group-item mx-5 my-1">{{light_name}}</p>
                                 {% endfor %}
                             </ul>
+
+                            <!-- On/Off -->
+                            {% if group.state['any_on'] == true %}
+                                <form action="/group/{{ group.id }}/off" method="post">
+                                    <button type="submit" value="Turn all off" class="btn btn-secondary shadow">
+                                        Turn all off
+                                    </button>
+                                </form>
+                            {% elif group.state['any_on'] == false %}
+                                <form action="/group/{{ group.id }}/on" method="post">
+                                    <button type="submit" value="Turn all on" class="btn btn-primary shadow-sm">
+                                        Turn all on
+                                    </button>
+                                </form>
+                            {% endif %}
                         </div>
 
                         <div class="card-footer mb-2" style="background: transparent; border-top: 0px;">
-                            <a href="/group/{{ group.id }}" class="btn btn-primary shadow-lg">View</a>
+                            <a href="/group/{{ group.id }}" class="btn btn-primary shadow">View</a>
                         </div>
 
                     </div>

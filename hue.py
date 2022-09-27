@@ -202,3 +202,14 @@ def get_groups(b):
     logging.info(f'Found {len(groups_list)} groups')
 
     return groups_list
+
+
+def group_on_off(b, group_id, state):
+    """Turn group on and off"""
+    if state == 'on':
+        b.set_group(group_id, 'on', True)
+        logging.info(f'Group {group_id} turned on')
+
+    elif state == 'off':
+        b.set_group(group_id, 'on', False)
+        logging.info(f'Group {group_id} turned off')
