@@ -80,21 +80,11 @@ def update_bridge_ip(bridge_ip):
 
 
 # Route to turn on the lights
-@app.route("/light/<light_id>/on", methods=["POST"])
-def light_on(light_id):
+@app.route("/light/<light_id>/<state>", methods=["POST"])
+def light_on_off(light_id, state):
     light_id = int(light_id)
     if request.method == 'POST':
-        hue.light_on(b, light_id)
-
-    return redirect('/control_page')
-
-
-# Route to turn off the lights
-@app.route("/light/<light_id>/off", methods=["POST"])
-def light_off(light_id):
-    light_id = int(light_id)
-    if request.method == 'POST':
-        hue.light_off(b, light_id)
+            hue.light_on_off(b, light_id, state)
 
     return redirect('/control_page')
 
