@@ -132,16 +132,15 @@ def get_lights(b):
     return lights_list
 
 
-def light_on(b, light_id):
-    """Turn on the light"""	
-    b.set_light(light_id, 'on', True)
-    logging.info(f'Light {light_id} turned on')
+def light_on_off(b, light_id, state):
+    """Turn light on and off"""
+    if state == 'on':
+        b.set_light(light_id, 'on', True)
+        logging.info(f'Light {light_id} turned on')
 
-
-def light_off(b, light_id):
-    """Turn off the light"""
-    b.set_light(light_id, 'on', False)
-    logging.info(f'Light {light_id} turned off')
+    elif state == 'off':
+        b.set_light(light_id, 'on', False)
+        logging.info(f'Light {light_id} turned off')
 
 
 def set_light_brightness(b, light_id, brightness):
