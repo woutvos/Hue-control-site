@@ -7,11 +7,11 @@
                 <div class="col-auto mb-3">
                     <div class="card text-center shadow mx-3 my-4" style="width: 17rem;">
 
-                        <div class="card-header">
+                        <div class="card-header shadow-sm">
                             <h5>{{ group.name }}</h5>
                         </div>
 
-                        <div class="card-body">
+                        <div class="card-body shadow-sm">
                             <!-- List of all the lights in that group -->
                             <ul class="list-group list-group-flush">
                                 {% for light_name in group.lights.name %}
@@ -20,25 +20,23 @@
                             </ul>
 
                             <!-- On/Off -->
-                            {% if group.state['any_on'] == true %}
+                            {% if group.state['any_on'] == false %}
+                            <form action="/group/{{ group.id }}/on" method="post">
+                                <button type="submit" value="Turn all on" class="btn btn-secondary shadow">
+                                    Turn all on
+                                </button>
+                            </form>
+                            {% elif group.state['any_on'] == true %}
                                 <form action="/group/{{ group.id }}/off" method="post">
-                                    <button type="submit" value="Turn all off" class="btn btn-secondary shadow">
+                                    <button type="submit" value="Turn all off" class="btn btn-primary shadow-sm">
                                         Turn all off
                                     </button>
                                 </form>
-                            {% elif group.state['any_on'] == false %}
-                                <form action="/group/{{ group.id }}/on" method="post">
-                                    <button type="submit" value="Turn all on" class="btn btn-primary shadow-sm">
-                                        Turn all on
-                                    </button>
-                                </form>
                             {% endif %}
-                        </div>
 
-                        <div class="card-footer mb-2" style="background: transparent; border-top: 0px;">
-                            <a href="/group/{{ group.id }}" class="btn btn-primary shadow">View</a>
+                            <!-- View button -->
+                            <a href="/group/{{ group.id }}" class="btn btn-primary mt-3 shadow">View</a>
                         </div>
-
                     </div>
                 </div>
             {% endfor %}
