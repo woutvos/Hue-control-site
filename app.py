@@ -121,5 +121,27 @@ def group_on_off(group_id, state):
     return redirect('/control_page')
 
 
+# Route to change the brightness of a group
+@app.route("/group/<group_id>/brightness", methods=["POST"])
+def group_brightness(group_id):
+    group_id = int(group_id)
+    if request.method == 'POST':
+        brightness = request.form['brightness']
+        brightness = int(brightness)
+        hue.set_group_brightness(b, group_id, brightness)
+
+    return redirect('/control_page')
+
+
+# Route to change the color of a group
+@app.route("/group/<group_id>/color", methods=["POST"])
+def group_color(group_id):
+    group_id = int(group_id)
+    if request.method == 'POST':
+        hue.set_group_color(b, group_id, request.form['color'])
+
+    return redirect('/control_page')
+
+
 if __name__ == "__main__":
     app.run(debug=True, host="127.0.0.1", port=80)
