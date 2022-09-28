@@ -111,7 +111,7 @@ lights_example = [
         "id": 10,
         "name": "Opbergkast",
         "status": False,
-        "brightness": 256,
+        "brightness": 254,
         "colormode": "xy",
         "hex": "ffcf78",
         "effect": "none",
@@ -137,30 +137,58 @@ groups_example = [
     {
         "id": 1,
         "name": "Alles",
-        "lights": {"id": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"]},
+        "lights": {
+            "id": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"]
+            },
         "type": "LightGroup",
-        "state": {"all_on": False, "any_on": True},
+        "state": {
+            "all_on": False,
+            "any_on": True
+            },
+        "average_brightness": 227,
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "Slaapkamer",
-        "lights": {"id": [1, 2, 3, 4, 5], "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"]},
+        "lights": {
+            "id": [1, 2, 3, 4, 5],
+            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"]
+            },
         "type": "LightGroup",
-        "state": {"all_on": False, "any_on": True},
+        "state": {
+            "all_on": False,
+            "any_on": True
+        },
+        "average_brightness": 202,
     },
     {
         "id": 3,
         "name": "Woonkamer",
-        "lights": {"id": [8, 9], "name": ["Bank", "Tv meubel"]},
+        "lights": {
+            "id": [8, 9],
+            "name": ["Bank", "Tv meubel"]
+            },
         "type": "LightGroup",
-        "state": {"all_on": True, "any_on": True},
+        "state": {
+            "all_on": True,
+            "any_on": True
+            },
+        "average_brightness": 150,
     },
     {
         "id": 4,
         "name": "Keuken",
-        "lights": {"id": [6,7 ], "name": ["Keukentafel", "Aanrecht",]},
+        "lights": {
+            "id": [6,7 ],
+            "name": ["Keukentafel", "Aanrecht",]
+            },
         "type": "LightGroup",
-        "state": {"all_on": True, "any_on": True},
+        "state": {
+            "all_on": True,
+            "any_on": True
+            },
+        "average_brightness": 254,
     },
 ]
 
