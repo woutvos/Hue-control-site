@@ -139,13 +139,13 @@ groups_example = [
         "name": "Alles",
         "lights": {
             "id": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"]
-            },
+            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"],
+        },
         "type": "LightGroup",
         "state": {
             "all_on": False,
             "any_on": True
-            },
+        },
         "average_brightness": 227,
     },
     {
@@ -153,8 +153,8 @@ groups_example = [
         "name": "Slaapkamer",
         "lights": {
             "id": [1, 2, 3, 4, 5],
-            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"]
-            },
+            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"],
+        },
         "type": "LightGroup",
         "state": {
             "all_on": False,
@@ -168,28 +168,44 @@ groups_example = [
         "lights": {
             "id": [8, 9],
             "name": ["Bank", "Tv meubel"]
-            },
+        },
         "type": "LightGroup",
         "state": {
             "all_on": True,
             "any_on": True
-            },
+        },
         "average_brightness": 150,
     },
     {
         "id": 4,
         "name": "Keuken",
         "lights": {
-            "id": [6,7 ],
-            "name": ["Keukentafel", "Aanrecht",]
-            },
+            "id": [6, 7],
+            "name": [
+                "Keukentafel",
+                "Aanrecht",
+            ],
+        },
         "type": "LightGroup",
         "state": {
             "all_on": True,
             "any_on": True
-            },
+        },
         "average_brightness": 254,
     },
 ]
 
-bridges_example = {'id': '1', 'internalipaddress' : 'example'}, {'id': '2', 'internalipaddress' : 'example2'}, {'id': '1', 'internalipaddress' : '192.168.1.71'},
+bridges_example = (
+    {
+        "id": "1",
+        "internalipaddress": "example"
+    },
+    {
+        "id": "2",
+        "internalipaddress": "example2"
+    },
+    {
+        "id": "1",
+        "internalipaddress": "192.168.1.71"
+    },
+)
