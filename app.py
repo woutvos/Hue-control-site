@@ -1,13 +1,15 @@
-from flask import Flask, render_template, request, redirect
-import hue
 import logging
 
+from flask import Flask, redirect, render_template, request
+
+import hue
 
 # Logging configuration
 logging.basicConfig(
     level=logging.INFO,
-    filename='app.log', filemode='w',
-    format='%(asctime)s - %(levelname)s - %(name)s - %(message)s'
+    filename="app.log",
+    filemode="w",
+    format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
 )
 
 # Flask configuration
@@ -67,7 +69,7 @@ def settings():
         title="Settings",
         bridges_list=hue.get_bridges(),
         current_bridge_ip=hue.get_current_bridge_ip(),
-        )
+    )
 
 
 # Route update the bridge ip
@@ -83,64 +85,64 @@ def update_bridge_ip(bridge_ip):
 @app.route("/light/<light_id>/<state>", methods=["POST"])
 def light_on_off(light_id, state):
     light_id = int(light_id)
-    if request.method == 'POST':
-            hue.light_on_off(b, light_id, state)
+    if request.method == "POST":
+        hue.light_on_off(b, light_id, state)
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 # Route to change the brightness
 @app.route("/light/<light_id>/brightness", methods=["POST"])
 def light_brightness(light_id):
     light_id = int(light_id)
-    if request.method == 'POST':
-        brightness = request.form['brightness']
+    if request.method == "POST":
+        brightness = request.form["brightness"]
         brightness = int(brightness)
         hue.set_light_brightness(b, light_id, brightness)
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 # Route to change the color
 @app.route("/light/<light_id>/color", methods=["POST"])
 def light_color(light_id):
     light_id = int(light_id)
-    if request.method == 'POST':
-        hue.set_light_color(b, light_id, request.form['color'])
+    if request.method == "POST":
+        hue.set_light_color(b, light_id, request.form["color"])
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 # Route to turn group on and off
 @app.route("/group/<group_id>/<state>", methods=["POST"])
 def group_on_off(group_id, state):
     group_id = int(group_id)
-    if request.method == 'POST':
-            hue.group_on_off(b, group_id, state)
+    if request.method == "POST":
+        hue.group_on_off(b, group_id, state)
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 # Route to change the brightness of a group
 @app.route("/group/<group_id>/brightness", methods=["POST"])
 def group_brightness(group_id):
     group_id = int(group_id)
-    if request.method == 'POST':
-        brightness = request.form['brightness']
+    if request.method == "POST":
+        brightness = request.form["brightness"]
         brightness = int(brightness)
         hue.set_group_brightness(b, group_id, brightness)
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 # Route to change the color of a group
 @app.route("/group/<group_id>/color", methods=["POST"])
 def group_color(group_id):
     group_id = int(group_id)
-    if request.method == 'POST':
-        hue.set_group_color(b, group_id, request.form['color'])
+    if request.method == "POST":
+        hue.set_group_color(b, group_id, request.form["color"])
 
-    return redirect('/control_page')
+    return redirect("/control_page")
 
 
 if __name__ == "__main__":
