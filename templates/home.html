@@ -19,39 +19,67 @@
         <p>Ook daarvoor kunt u een issue aanmaken op <a href="https://github.com/woutvos/Hue-control-site/issues/new" target="_blank">Github</a>.</p>
 
         <h3 class="mt-5">To Do</h3>
-        <div class="list-group shadow">
-            <li class="list-group-item">Feedback na iets aanpassen</li>
-            <li class="list-group-item">Error handling</li>
-            <li class="list-group-item">Groep pagina</li>
-            <li class="list-group-item">Filteren</li>
-            <li class="list-group-item">Login en registreren functionaliteit</li>
-            <li class="list-group-item">Flask session id</li>
-            <li class="list-group-item">Async</li>
-            <li class="list-group-item">Ajax</li>
-            <li class="list-group-item">Meerdere talen</li>
-            <li class="list-group-item">Footer</li>
-            <li class="list-group-item">404 pagina</li>
-            <li class="list-group-item">Features pagina</li>
-            <li class="list-group-item">About pagina</li>
-            <li class="list-group-item">Card gradient voor control page</li>
-            <li class="list-group-item">Kaart uitschakelen wanneer niet bereikbaar</li>
-            <li class="list-group-item">Snelheid optimaliseren</li>
-            <li class="list-group-item">Bridge info card</li>
-            <li class="list-group-item">Niet te veel requests sturen naar discovery.meethue.com</li>
-            <li class="list-group-item">Effecten</li>
-            <li class="list-group-item">Schedules</li>
-            <li class="list-group-item">Scenes</li>
-            <li class="list-group-item">Sensoren</li>
-            <li class="list-group-item">Rules</li>
-            <li class="list-group-item">Software update vanuit settings</li>
-            <li class="list-group-item">Los de meeste deepsource-problemen op</li>
-            <li class="list-group-item">Dark mode</li>
-            <li class="list-group-item">Placeholder tijdens laden</li>
-            <li class="list-group-item">Zoek functie</li>
-            <li class="list-group-item">Rondleiding</li>
-            <li class="list-group-item">Hints</li>
-            <li class="list-group-item">Lampen en groepen beheren, toevoegen, verwijderen</li>
-        </div>
+            <h5 class="mt-3">Functionaliteit</h5>
+            <div class="list-group shadow-sm">
+                <li class="list-group-item">Feedback na iets aanpassen</li>
+                <li class="list-group-item">Error handling</li>
+                <li class="list-group-item">Groep pagina</li>
+                <li class="list-group-item">Filteren</li>
+                <li class="list-group-item">Login en registreren functionaliteit</li>
+                <li class="list-group-item">Meerdere talen</li>
+                <li class="list-group-item">404 pagina</li>
+                <li class="list-group-item">Effecten</li>
+                <li class="list-group-item">Schedules</li>
+                <li class="list-group-item">Scenes</li>
+                <li class="list-group-item">Sensoren</li>
+                <li class="list-group-item">Rules</li>
+                <li class="list-group-item">Software update vanuit settings</li>
+                <li class="list-group-item">Setup pagina</li>
+                <li class="list-group-item">Lampen en groepen beheren, toevoegen, verwijderen, hernoemen</li>
+            </div>
+
+            <h5 class="mt-3">Functionaliteit specifiek backend</h5>
+            <div class="list-group shadow-sm">
+                <li class="list-group-item">Flask session id</li>
+                <li class="list-group-item">Niet te veel requests sturen naar discovery.meethue.com</li>
+            </div>
+
+            <h5 class="mt-3">Design</h5>
+            <div class="list-group shadow-sm">
+                <li class="list-group-item">Footer</li>
+                <li class="list-group-item">Features pagina</li>
+                <li class="list-group-item">About pagina</li>
+                <li class="list-group-item">Card gradient voor control page</li>
+                <li class="list-group-item">Kaart uitschakelen wanneer niet bereikbaar</li>
+                <li class="list-group-item">Bridge info card</li>
+                <li class="list-group-item">Dark mode</li>
+                <li class="list-group-item">Placeholder tijdens laden</li>
+                <li class="list-group-item">Zoek functie</li>
+                <li class="list-group-item">Rondleiding</li>
+                <li class="list-group-item">Hints</li>
+            </div>
+
+            <h5 class="mt-3">Performance</h5>
+            <div class="list-group shadow-sm">
+                <li class="list-group-item">Async</li>
+                <li class="list-group-item">Ajax</li>
+                <li class="list-group-item">Lazy loading</li>
+            </div>
+
+            <h5 class="mt-3">Code improvement</h5>
+            <div class="list-group shadow-sm">
+                <li class="list-group-item">Los de meeste deepsource-problemen op</li>
+            </div>
+
+            <h5 class="mt-3">Documentatie</h5>
+            <div class="list-group shadow-sm">
+
+            </div>
+
+            <h5 class="mt-3">Overig</h5>
+            <div class="list-group shadow-sm">
+
+            </div>
 
         <h3 class="mt-5">Momenteel mee bezig</h3>
         <div class="list-group shadow">
@@ -61,7 +89,7 @@
 
             <!-- Disabled item's-->
         <h3 class="mt-5">Al gedaan</h3>
-        <div class="list-group shadow-lg">
+        <div class="list-group shadow">
             <a class="list-group-item list-group-item-action" href="{{ url_for('home') }}">Home pagina</a>
             <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Aan/uit</a>
             <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Kleur</a>
