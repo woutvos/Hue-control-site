@@ -183,21 +183,13 @@ groups_example = [
     },
 ]
 
-<<<<<<< HEAD
-bridges_example = {'id': '1', 'internalipaddress' : 'example'}, {'id': '1', 'internalipaddress' : '192.168.1.71'},
-=======
 bridges_example = (
     {
         "id": "1",
         "internalipaddress": "example"
     },
     {
-        "id": "2",
-        "internalipaddress": "example2"
-    },
-    {
         "id": "1",
         "internalipaddress": "192.168.1.71"
     },
 )
->>>>>>> 8d7e3740221e13790dd64aad6d7f259399074858
