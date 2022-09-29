@@ -38,7 +38,7 @@ lights_example = [
     {
         "id": 4,
         "name": "Bed",
-        "status": False,
+        "status": True,
         "brightness": 130,
         "colormode": "xy",
         "hex": "ffbd56",
@@ -50,7 +50,7 @@ lights_example = [
     {
         "id": 5,
         "name": "Deur",
-        "status": False,
+        "status": True,
         "brightness": 254,
         "colormode": "xy",
         "hex": "ffcf78",
@@ -74,7 +74,7 @@ lights_example = [
     {
         "id": 7,
         "name": "Aanrecht",
-        "status": True,
+        "status": False,
         "brightness": 254,
         "colormode": "xy",
         "hex": "ffcf78",
@@ -98,7 +98,7 @@ lights_example = [
     {
         "id": 9,
         "name": "Tv meubel",
-        "status": True,
+        "status": False,
         "brightness": 100,
         "colormode": "xy",
         "hex": "ffbd56",
@@ -114,18 +114,6 @@ lights_example = [
         "brightness": 254,
         "colormode": "xy",
         "hex": "ffcf78",
-        "effect": "none",
-        "alert": "select",
-        "reachable": True,
-        "type": "Extended color light",
-    },
-    {
-        "id": 11,
-        "name": "Gang",
-        "status": False,
-        "brightness": 200,
-        "colormode": "xy",
-        "hex": "ffbd56",
         "effect": "none",
         "alert": "select",
         "reachable": True,
@@ -192,4 +180,4 @@ groups_example = [
     },
 ]
 
-bridges_example = {'id': '1', 'internalipaddress' : 'example'}, {'id': '2', 'internalipaddress' : 'example2'}, {'id': '1', 'internalipaddress' : '192.168.1.71'},
+bridges_example = {'id': '1', 'internalipaddress' : 'example'}, {'id': '1', 'internalipaddress' : '192.168.1.71'},
