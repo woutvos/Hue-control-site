@@ -20,8 +20,8 @@ converter = Converter()
 DB_PATH = "settings.db"
 logging.info(f"Using: {DB_PATH}")
 
-# Bridge things
 
+# Bridge things
 
 def connect_to_latest_bridge():
     """Connect to the latest used bridge"""
@@ -102,7 +102,6 @@ def get_bridges():
 
 
 # Light things
-
 
 def get_lights(b):
     """Get all the lights"""
@@ -217,7 +216,6 @@ def set_light_color(b, light_id, color):
 
 # Things needed for the group functions to work
 
-
 def light_names(light_id, lights):
     """Get the id's of the lights and their corresponding names"""
     # Get the name of the light
@@ -237,7 +235,6 @@ def average_brightness(b, lights):
 
 
 # Group things
-
 
 def get_groups(b):
     """Get all the groups"""
