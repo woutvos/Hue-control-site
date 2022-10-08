@@ -127,7 +127,18 @@ groups_example = [
         "name": "All",
         "lights": {
             "id": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "name": ["TV", "Desk", "Seat", "Bed", "Door", "Kitchen table", "Countertop", "Sofa", "TV cabinet", "Storage cabinet"],
+            "name": [
+                "TV",
+                "Desk",
+                "Seat",
+                "Bed",
+                "Door",
+                "Kitchen table",
+                "Countertop",
+                "Sofa",
+                "TV cabinet",
+                "Storage cabinet",
+            ],
         },
         "type": "LightGroup",
         "state": {
