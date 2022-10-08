@@ -1,7 +1,7 @@
 lights_example = [
     {
         "id": 1,
-        "name": "Tv",
+        "name": "TV",
         "status": True,
         "brightness": 170,
         "colormode": "xy",
@@ -13,7 +13,7 @@ lights_example = [
     },
     {
         "id": 2,
-        "name": "Bureau",
+        "name": "Desk",
         "status": True,
         "brightness": 254,
         "colormode": "xy",
@@ -25,7 +25,7 @@ lights_example = [
     },
     {
         "id": 3,
-        "name": "Bank",
+        "name": "Seat",
         "status": True,
         "brightness": 200,
         "colormode": "xy",
@@ -49,7 +49,7 @@ lights_example = [
     },
     {
         "id": 5,
-        "name": "Deur",
+        "name": "Door",
         "status": True,
         "brightness": 254,
         "colormode": "xy",
@@ -61,7 +61,7 @@ lights_example = [
     },
     {
         "id": 6,
-        "name": "Keukentafel",
+        "name": "Kitchen table",
         "status": True,
         "brightness": 254,
         "colormode": "xy",
@@ -73,7 +73,7 @@ lights_example = [
     },
     {
         "id": 7,
-        "name": "Aanrecht",
+        "name": "Countertop",
         "status": False,
         "brightness": 254,
         "colormode": "xy",
@@ -85,7 +85,7 @@ lights_example = [
     },
     {
         "id": 8,
-        "name": "Bank",
+        "name": "Sofa",
         "status": True,
         "brightness": 200,
         "colormode": "xy",
@@ -97,7 +97,7 @@ lights_example = [
     },
     {
         "id": 9,
-        "name": "Tv meubel",
+        "name": "TV cabinet",
         "status": False,
         "brightness": 100,
         "colormode": "xy",
@@ -109,7 +109,7 @@ lights_example = [
     },
     {
         "id": 10,
-        "name": "Opbergkast",
+        "name": "Storage cabinet",
         "status": False,
         "brightness": 254,
         "colormode": "xy",
@@ -124,10 +124,10 @@ lights_example = [
 groups_example = [
     {
         "id": 1,
-        "name": "Alles",
+        "name": "All",
         "lights": {
             "id": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"],
+            "name": ["TV", "Desk", "Seat", "Bed", "Door", "Kitchen table", "Countertop", "Sofa", "TV cabinet", "Storage cabinet"],
         },
         "type": "LightGroup",
         "state": {
@@ -138,10 +138,10 @@ groups_example = [
     },
     {
         "id": 2,
-        "name": "Slaapkamer",
+        "name": "Bedroom",
         "lights": {
             "id": [1, 2, 3, 4, 5],
-            "name": ["Tv", "Bureau", "Bank", "Bed", "Deur"],
+            "name": ["TV", "Desk", "Seat", "Bed", "Door"],
         },
         "type": "LightGroup",
         "state": {
@@ -152,10 +152,10 @@ groups_example = [
     },
     {
         "id": 3,
-        "name": "Woonkamer",
+        "name": "Living room",
         "lights": {
             "id": [8, 9],
-            "name": ["Bank", "Tv meubel"]
+            "name": ["Sofa", "TV cabinet"],
         },
         "type": "LightGroup",
         "state": {
@@ -166,13 +166,10 @@ groups_example = [
     },
     {
         "id": 4,
-        "name": "Keuken",
+        "name": "Kitchen",
         "lights": {
             "id": [6, 7],
-            "name": [
-                "Keukentafel",
-                "Aanrecht",
-            ],
+            "name": ["Kitchen table", "Countertop"],
         },
         "type": "LightGroup",
         "state": {
