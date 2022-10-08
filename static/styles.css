@@ -10,3 +10,9 @@ body::-webkit-scrollbar {
 a {
     text-decoration: none !important;
 }
+  
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+}

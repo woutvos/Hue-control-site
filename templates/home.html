@@ -1,105 +1,180 @@
 {% extends "layout.html" %}
 {% block content %}
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{{url_for('static', filename='mockup.png')}}" class="d-block mx-lg-auto img-fluid" alt="Mockup" width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Hue control</h1>
+                <p class="lead">Control your house with one click from your browser. Compatible with all philips hue lights!</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a class="nav-link" href="{{ url_for('register') }}">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Register now!</button>
+                    </a>
+                    <a class="nav-link" href="{{ url_for('control_page') }}">
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Go to control page</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-4 py-5" id="hanging-icons">
+        <h2 class="pb-2 border-bottom">Features</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <i class="material-icons">devices</i>
+                </div>
+                <div>
+                    <h3 class="fs-2">Access</h3>
+                    <p>The handyness of this web app is that any device with a browser can open it. This gives you access to your lights over your entire network on any device. Wanna take a look? Click below!</p>
+                    <a href="{{url_for('control_page')}}" class="btn btn-primary">
+                        View the control page
+                    </a>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <i class="material-icons">dns</i>
+                </div>
+                <div>
+                    <h3 class="fs-2">Open source</h3>
+                    <p>Do you hate it when powerful companies own your data? We do! That's why we created this site, open source so you can set it up for your needs. At the moment, not everything works... But you can change that! Click below to help contributing.</p>
+                    <a href="https://github.com/woutvos/Hue-control-site" class="btn btn-primary">
+                        View source code
+                    </a>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <i class="material-icons">speed</i>
+                </div>
+                <div>
+                    <h3 class="fs-2">Speed</h3>
+                    <p>We are craving to get the best speeds for you, currently this isn't the case. Do you want to help? Visit the GitHub page to contribute!</p>
+                    <a href="https://github.com/woutvos/Hue-control-site" class="btn btn-primary">
+                        Contribute
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container-md">
-        <h1 class="display-1">Home</h1>
-        <p>Hallo lezer! Momenteel werkt helaas nog niet alles, alles wat je ziet, op lege pagina's na, doet het wel!</p>
-        <p>Het kan zijn dat de pagina <a href="{{ url_for('control_page') }}">control page</a> langer moet laden wanneer de site is verbonden met een echte bridge, gemiddeld duurt dit 5 seconden. Later word async toegevoegd om deze lang wachttijd op te lossen.</p>
-        
-        <h2 class="mt-5">Vaak gestelde vragen</h2>
-        <h5>Ik heb geen Philips Hue bridge maar wil de control page wel bekijk, is dat mogelijk?</h5>
-        <p>Jazeker! Ga naar de <a href="{{ url_for('settings') }}">instellingen</a> en selecteer bij "Change bridge" "example". Je kan nu de website bekijken zonder vervelende fouten te krijgen, je kan in deze modus helaas niks aanpassen.</p>
+        <h2 class="mt-5">Frequently asked questions</h2>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        I don't have a Philips Hue bridge but want to view the control page, is that possible?                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Yes, of course! Go to the <a href="{{ url_for('settings') }}">settings</a> and select <kbd>Change bridge</kbd> <kbd>example</kbd>. You can now view the website without getting annoying errors, unfortunately you can't change anything in this mode. </div>
+                    </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        I have an idea for the site, how can I pass it on?                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        It is best to create an issue at <a href="https://github.com/woutvos/Hue-control-site/issues/new" target="_blank">Github</a>.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        I have a problem with the site, how can I report it?                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        You can also create an issue for that at <a href="https://github.com/woutvos/Hue-control-site/issues/new" target="_blank">Github</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <h5>De home pagina is in het Nederlands maar de rest in het Engels, hoe zit dat?</h5>
-        <p>Momenteel word de site vooral in het engels gebouwd, behalve deze pagina. Later zullen we de mogelijkheid voor meerdere talen toevoegen.</p>
-
-        <h5>Ik heb een idee voor de site, hoe kan ik dit doorgeven?</h5>
-        <p>U kan het beste een issue aanmaken op <a href="https://github.com/woutvos/Hue-control-site/issues/new" target="_blank">Github</a>.</p>
-
-        <h5>Ik heb een probleem met de site, hoe kan ik dit doorgeven?</h5>
-        <p>Ook daarvoor kunt u een issue aanmaken op <a href="https://github.com/woutvos/Hue-control-site/issues/new" target="_blank">Github</a>.</p>
-
-        <h3 class="mt-5">To Do</h3>
-            <h5 class="mt-3">Functionaliteit</h5>
-            <div class="list-group shadow-sm">
-                <li class="list-group-item">Feedback na iets aanpassen</li>
+    <div class="container-md">
+        <div>
+            <h3 class="mt-5">To Do</h3>
+            <h5 class="mt-3">Functionality</h5>
+            <div class="list-group">
+                <li class="list-group-item">Feedback after editing something</li>
                 <li class="list-group-item">Error handling</li>
-                <li class="list-group-item">Groep pagina</li>
-                <li class="list-group-item">Filteren</li>
-                <li class="list-group-item">Login en registreren functionaliteit</li>
-                <li class="list-group-item">Meerdere talen</li>
-                <li class="list-group-item">404 pagina</li>
-                <li class="list-group-item">Effecten</li>
+                <li class="list-group-item">Group page</li>
+                <li class="list-group-item">Filter</li>
+                <li class="list-group-item">Login and register functionality</li>
+                <li class="list-group-item">Multiple languages</li>
+                <li class="list-group-item">404 page</li>
+                <li class="list-group-item">Effects</li>
                 <li class="list-group-item">Schedules</li>
                 <li class="list-group-item">Scenes</li>
-                <li class="list-group-item">Sensoren</li>
+                <li class="list-group-item">Sensors</li>
                 <li class="list-group-item">Rules</li>
-                <li class="list-group-item">Software update vanuit settings</li>
-                <li class="list-group-item">Setup pagina</li>
-                <li class="list-group-item">Lampen en groepen beheren, toevoegen, verwijderen, hernoemen</li>
+                <li class="list-group-item">Software update from settings</li>
+                <li class="list-group-item">Setup page</li>
+                <li class="list-group-item">Manage, add, delete, rename lamps and groups</li>
             </div>
 
-            <h5 class="mt-3">Functionaliteit specifiek backend</h5>
-            <div class="list-group shadow-sm">
+            <h5 class="mt-3">Functionality specific backend</h5>
+            <div class="list-group">
                 <li class="list-group-item">Flask session id</li>
-                <li class="list-group-item">Niet te veel requests sturen naar discovery.meethue.com</li>
+                <li class="list-group-item">Don't send too many requests to discovery.meethue.com</li>
             </div>
 
             <h5 class="mt-3">Design</h5>
-            <div class="list-group shadow-sm">
+            <div class="list-group">
                 <li class="list-group-item">Footer</li>
-                <li class="list-group-item">Features pagina</li>
-                <li class="list-group-item">About pagina</li>
-                <li class="list-group-item">Card gradient voor control page</li>
-                <li class="list-group-item">Kaart uitschakelen wanneer niet bereikbaar</li>
+                <li class="list-group-item">Features page</li>
+                <li class="list-group-item">About page</li>
+                <li class="list-group-item">Card gradient for control page</li>
+                <li class="list-group-item">Disable map when not reachable</li>
                 <li class="list-group-item">Bridge info card</li>
                 <li class="list-group-item">Dark mode</li>
-                <li class="list-group-item">Placeholder tijdens laden</li>
-                <li class="list-group-item">Zoek functie</li>
-                <li class="list-group-item">Rondleiding</li>
+                <li class="list-group-item">Placeholder while loading</li>
+                <li class="list-group-item">Search function</li>
+                <li class="list-group-item">Tour</li>
                 <li class="list-group-item">Hints</li>
             </div>
 
             <h5 class="mt-3">Performance</h5>
-            <div class="list-group shadow-sm">
+            <div class="list-group">
                 <li class="list-group-item">Async</li>
                 <li class="list-group-item">Ajax</li>
                 <li class="list-group-item">Lazy loading</li>
             </div>
 
             <h5 class="mt-3">Code improvement</h5>
-            <div class="list-group shadow-sm">
-                <li class="list-group-item">Los de meeste deepsource-problemen op</li>
+            <div class="list-group">
+                <li class="list-group-item">Solve most deep source issues</li>
             </div>
-
-            <h5 class="mt-3">Documentatie</h5>
-            <div class="list-group shadow-sm">
-
-            </div>
-
-            <h5 class="mt-3">Overig</h5>
-            <div class="list-group shadow-sm">
-
-            </div>
-
-        <h3 class="mt-5">Momenteel mee bezig</h3>
-        <div class="list-group shadow">
-            <li class="list-group-item">Groep pagina</li>
-            <li class="list-group-item">Groepen</li>
         </div>
 
-            <!-- Disabled item's-->
-        <h3 class="mt-5">Al gedaan</h3>
-        <div class="list-group shadow">
-            <a class="list-group-item list-group-item-action" href="{{ url_for('home') }}">Home pagina</a>
-            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Aan/uit</a>
-            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Kleur</a>
-            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Dimmen</a>
-            <li class="list-group-item">Loggen</li>
-            <a class="list-group-item list-group-item-action" href="{{ url_for('settings') }}">Instellingen</a>
-            <a class="list-group-item list-group-item-action" href="{{ url_for('settings') }}">Automatisch zoeken naar bridge</a>
-            <a class="list-group-item list-group-item-action" href="{{ url_for('settings') }}">Voorbeeld functionaliteit</a>
+        <h3 class="mt-5">Currently working on it</h3>
+        <div class="list-group">
+            <li class="list-group-item">Group page</li>
+            <li class="list-group-item">Groups</li>
+        </div>
+    
+        <!-- Disabled items-->
+        <h3 class="mt-5">Already done</h3>
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action" href="{{ url_for('home') }}">Home page</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">On/Off</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Color</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Dimming</a>
+            <li class="list-group-item">Log</li>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('settings') }}">Settings</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('settings') }}">Automatic search for bridge</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('settings') }}">Example functionality</a>
             <li class="list-group-item">Responsive design</li>
-            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Groepen</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('control_page') }}">Groups</a>
         </div>
     </div>
 {% endblock content %}
