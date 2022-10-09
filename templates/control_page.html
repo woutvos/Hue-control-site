@@ -36,14 +36,14 @@
                                     <!-- On/Off -->
                                     {% if group.state['any_on'] == false %}
                                     <form action="/group/{{ group.id }}/on" method="post">
-                                        <button type="submit" value="Turn all on" class="btn btn-secondary shadow">
-                                            Turn all on
+                                        <button type="submit" value="Turn all on" class="btn btn-outline-danger shadow">
+                                            Off
                                         </button>
                                     </form>
                                     {% elif group.state['any_on'] == true %}
                                         <form action="/group/{{ group.id }}/off" method="post">
-                                            <button type="submit" value="Turn all off" class="btn btn-primary shadow-sm">
-                                                Turn all off
+                                            <button type="submit" value="Turn all off" class="btn btn-outline-success shadow-sm">
+                                                On
                                             </button>
                                         </form>
                                     {% endif %}
@@ -116,14 +116,14 @@
                             <!-- On/Off -->
                             {% if light.status == false %}
                                 <form action="/light/{{ light.id }}/on" method="post">
-                                    <button type="submit" value="Turn on" class="btn btn-secondary shadow">
-                                        Turn on
+                                    <button type="submit" value="Turn on" class="btn btn-outline-danger shadow">
+                                        Off
                                     </button>
                                 </form>
                             {% elif light.status == true %}
                                 <form action="/light/{{ light.id }}/off" method="post">
-                                    <button type="submit" value="Turn off" class="btn btn-primary shadow-sm">
-                                        Turn off
+                                    <button type="submit" value="Turn off" class="btn btn-outline-success shadow-sm">
+                                        On
                                     </button>
                                 </form>
                             {% endif %}
